@@ -19,6 +19,16 @@ const BookForm: React.FC<Props> = ({ currentBook, onSave, onCancel }) => {
         }
     }, [currentBook]);
 
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { name, value } = e.target;
+        setBook({ ...book, [name]: value });
+    };
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        onSave(book);
+    };
+
 
   return (
     <div className="modal">
@@ -28,13 +38,15 @@ const BookForm: React.FC<Props> = ({ currentBook, onSave, onCancel }) => {
                 <button type="button" className="close-btn" onClick={onCancel}></button>
             </div>
             
-            <form  className="form-grid">
+            <form onSubmit={handleSubmit} className="form-grid">
                     <div>
                         <label className="label">Title *</label>
                         <input
                             className="input"
                             name="title"
                             placeholder="Enter book title"
+                            value={book.title}
+                            onChange={handleChange}
                             
                         />
                     </div>
