@@ -1,12 +1,31 @@
+import React, { useState, useEffect } from 'react';
+import type { Book } from '../types';
+
+interface Props {
+    currentBook: Book | null;
+    onSave: (book: Book) => void;
+    onCancel: () => void;
+}
 
 
-function BookForm() {
+const BookForm: React.FC<Props> = ({ currentBook, onSave, onCancel }) => {
+    const [book, setBook] = useState<Book>({ title: '', author: '', description: '' });
+
+    useEffect(() => {
+        if (currentBook) {
+            setBook(currentBook);
+        } else {
+            setBook({ title: '', author: '', description: '' });
+        }
+    }, [currentBook]);
+
+
   return (
     <div className="modal">
         <div className="modal-card">
             <div className="modal-header">
-                <h2>Add New Book</h2>
-                <button type="button" className="close-btn">cancel</button>
+                <h2 className="modal-title">{currentBook ? "Edit Book" : "Add New Book"}</h2>
+                <button type="button" className="close-btn" onClick={onCancel}></button>
             </div>
             
             <form  className="form-grid">
@@ -38,8 +57,8 @@ function BookForm() {
                         />
                     </div>
                     <div className="modal-actions">
-                        <button type="button" className="secondary-btn" >Cancel</button>
-                        <button type="submit" className="primary-btn">Submit</button>
+                        <button type="button" className="secondary-btn" onClick={onCancel} >Cancel</button>
+                        <button type="submit" className="primary-btn">{currentBook ? "Update" : "Add"}</button>
                     </div>
                 </form>
 
