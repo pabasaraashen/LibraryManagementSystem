@@ -1,42 +1,78 @@
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
 #root {
-  max-width: 1280px;
+  max-width: 960px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding: 32px 20px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 28px;
+  font-weight: 700;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.primary-btn {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: var(--shadow);
 }
+.primary-btn:hover { background: var(--primary-hover); }
 
-.card {
-  padding: 2em;
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
 }
+.modal-card {
+  background: var(--card);
+  border-radius: 16px;
+  width: 560px;
+  max-width: 100%;
+  box-shadow: var(--shadow);
+  padding: 20px;
+}
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+.modal-title { font-size: 22px; font-weight: 700; }
+.close-btn { background: transparent; border: none; font-size: 20px; cursor: pointer; }
+.form-grid { display: grid; gap: 12px; }
+.label { font-weight: 600; margin-bottom: 6px; display: block; }
+.input, .textarea {
+  width: 100%;
+  background: #fff;
+  color: #1f2937;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 1px;
+  outline: none;
+}
+.textarea { min-height: 120px; resize: vertical; }
+.modal-actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 8px; }
+.secondary-btn { background: #fff; color: #1f2937; border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; cursor: pointer; }
 
-.read-the-docs {
-  color: #888;
-}
+
