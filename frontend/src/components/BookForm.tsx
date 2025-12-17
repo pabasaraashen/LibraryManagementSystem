@@ -3,7 +3,7 @@ import type { Book } from '../types';
 
 interface Props {
     currentBook: Book | null;
-    onSave: (book: Book) => void;
+    onSave: (book: Book) => Promise<void>;
     onCancel: () => void;
 }
 
@@ -56,6 +56,8 @@ const BookForm: React.FC<Props> = ({ currentBook, onSave, onCancel }) => {
                             className="input"
                             name="author"
                             placeholder="Enter author name"
+                            value={book.author}
+                            onChange={handleChange}
                             
                         />
                     </div>
@@ -65,6 +67,8 @@ const BookForm: React.FC<Props> = ({ currentBook, onSave, onCancel }) => {
                             className="textarea"
                             name="description"
                             placeholder="Enter book description"
+                            value={book.description}
+                            onChange={handleChange}
                             
                         />
                     </div>

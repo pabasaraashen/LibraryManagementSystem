@@ -1,7 +1,7 @@
 import axios from 'axios';
 import type { Book } from './types';
 
-const API_URL = 'http://localhost:5173/api/Books'; 
+const API_URL = 'http://localhost:5156/api/Books'; 
 
 export const getBooks = async () => (await axios.get<Book[]>(API_URL)).data;
 export const createBook = async (book: Book) => (await axios.post<Book>(API_URL, book)).data;

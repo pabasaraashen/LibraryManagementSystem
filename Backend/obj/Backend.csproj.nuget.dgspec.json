@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Github\\LibraryManagementSystem\\Backend\\Backend.csproj": {}
+    "e:\\Github\\LibraryManagementSystem\\Backend\\Backend.csproj": {}
   },
   "projects": {
-    "E:\\Github\\LibraryManagementSystem\\Backend\\Backend.csproj": {
+    "e:\\Github\\LibraryManagementSystem\\Backend\\Backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Github\\LibraryManagementSystem\\Backend\\Backend.csproj",
+        "projectUniqueName": "e:\\Github\\LibraryManagementSystem\\Backend\\Backend.csproj",
         "projectName": "Backend",
-        "projectPath": "E:\\Github\\LibraryManagementSystem\\Backend\\Backend.csproj",
+        "projectPath": "e:\\Github\\LibraryManagementSystem\\Backend\\Backend.csproj",
         "packagesPath": "C:\\Users\\pabas\\.nuget\\packages\\",
-        "outputPath": "E:\\Github\\LibraryManagementSystem\\Backend\\obj\\",
+        "outputPath": "e:\\Github\\LibraryManagementSystem\\Backend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\pabas\\AppData\\Roaming\\NuGet\\NuGet.Config"
