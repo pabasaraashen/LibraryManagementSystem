@@ -16,7 +16,7 @@ const BookList: React.FC<Props> = ({ books, onEdit, onDelete }) => {
             <div>
               <h3 className="book-title">{book.title}</h3>
               <p className="book-author"><strong>Author:</strong> {book.author}</p>
-              <p className="book-desc">{book.description}</p>
+              <p className="book-desc"><strong>Description:</strong> {book.description}</p>
             </div>
             <div className="actions">
               <button className="icon-btn" onClick={() => onEdit(book)}>

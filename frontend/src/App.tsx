@@ -9,6 +9,7 @@ function App() {
     const [books, setBooks] = useState<Book[]>([]);
     const [editingBook, setEditingBook] = useState<Book | null>(null);
     const [isFormVisible, setIsFormVisible] = useState(false);
+    const [searchTerm, setSearchTerm] = useState('');
 
     useEffect(() => {
         loadBooks();
@@ -50,6 +51,11 @@ function App() {
         }
     };
 
+    const filteredBooks = books.filter(book =>
+        book.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        book.author.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
 
 
     return (
@@ -65,7 +71,15 @@ function App() {
                 )}
             </div>
 
-
+            <div className="search-container">
+                <input
+                    type="text"
+                    className="search-input"
+                    placeholder="Search books by title or author..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                />
+            </div>
 
             {isFormVisible && (
                 <BookForm
@@ -75,7 +89,7 @@ function App() {
                 />
             )}
 
-            <BookList books={books} onEdit={handleEdit} onDelete={handleDelete} />
+            <BookList books={filteredBooks} onEdit={handleEdit} onDelete={handleDelete} />
         </div>
     );
 }
