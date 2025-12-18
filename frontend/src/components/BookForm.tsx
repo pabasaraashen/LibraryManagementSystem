@@ -37,7 +37,7 @@ const BookForm: React.FC<Props> = ({ currentBook, onSave, onCancel }) => {
                 </div>
                 <form onSubmit={handleSubmit} className="form-grid">
                     <div>
-                        <label className="label">Title *</label>
+                        <label className="label">Title</label>
                         <input
                             className="input"
                             name="title"
@@ -48,7 +48,7 @@ const BookForm: React.FC<Props> = ({ currentBook, onSave, onCancel }) => {
                         />
                     </div>
                     <div>
-                        <label className="label">Author *</label>
+                        <label className="label">Author</label>
                         <input
                             className="input"
                             name="author"
@@ -59,7 +59,7 @@ const BookForm: React.FC<Props> = ({ currentBook, onSave, onCancel }) => {
                         />
                     </div>
                     <div>
-                        <label className="label">Description *</label>
+                        <label className="label">Description</label>
                         <textarea
                             className="textarea"
                             name="description"
