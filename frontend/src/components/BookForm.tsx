@@ -7,7 +7,6 @@ interface Props {
     onCancel: () => void;
 }
 
-
 const BookForm: React.FC<Props> = ({ currentBook, onSave, onCancel }) => {
     const [book, setBook] = useState<Book>({ title: '', author: '', description: '' });
 
@@ -29,16 +28,14 @@ const BookForm: React.FC<Props> = ({ currentBook, onSave, onCancel }) => {
         onSave(book);
     };
 
-
-  return (
-    <div className="modal">
-        <div className="modal-card">
-            <div className="modal-header">
-                <h2 className="modal-title">{currentBook ? "Edit Book" : "Add New Book"}</h2>
-                <button type="button" className="close-btn" onClick={onCancel}></button>
-            </div>
-            
-            <form onSubmit={handleSubmit} className="form-grid">
+    return (
+        <div className="modal">
+            <div className="modal-card">
+                <div className="modal-header">
+                    <h2 className="modal-title">{currentBook ? 'Edit Book' : 'Add New Book'}</h2>
+                    <button type="button" className="close-btn" onClick={onCancel}>×</button>
+                </div>
+                <form onSubmit={handleSubmit} className="form-grid">
                     <div>
                         <label className="label">Title *</label>
                         <input
@@ -47,7 +44,7 @@ const BookForm: React.FC<Props> = ({ currentBook, onSave, onCancel }) => {
                             placeholder="Enter book title"
                             value={book.title}
                             onChange={handleChange}
-                            
+                            required
                         />
                     </div>
                     <div>
@@ -58,7 +55,7 @@ const BookForm: React.FC<Props> = ({ currentBook, onSave, onCancel }) => {
                             placeholder="Enter author name"
                             value={book.author}
                             onChange={handleChange}
-                            
+                            required
                         />
                     </div>
                     <div>
@@ -69,18 +66,16 @@ const BookForm: React.FC<Props> = ({ currentBook, onSave, onCancel }) => {
                             placeholder="Enter book description"
                             value={book.description}
                             onChange={handleChange}
-                            
                         />
                     </div>
                     <div className="modal-actions">
-                        <button type="button" className="secondary-btn" onClick={onCancel} >Cancel</button>
-                        <button type="submit" className="primary-btn">{currentBook ? "Update" : "Add"}</button>
+                        <button type="button" className="secondary-btn" onClick={onCancel}>Cancel</button>
+                        <button type="submit" className="primary-btn">{currentBook ? 'Update' : 'Create'}</button>
                     </div>
                 </form>
-
+            </div>
         </div>
-    </div>
-  )
-}
+    );
+};
 
-export default BookForm
+export default BookForm;
