@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ez4dTn9s3fM=",
+  "dgSpecHash": "W807QBH/c/I=",
   "success": true,
-  "projectFilePath": "E:\\Github\\LibraryManagementSystem\\Backend\\Backend.csproj",
+  "projectFilePath": "E:\\Github\\LibraryManagementSystem\\backend\\Backend.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pabas\\.nuget\\packages\\microsoft.aspnetcore.openapi\\8.0.22\\microsoft.aspnetcore.openapi.8.0.22.nupkg.sha512",
     "C:\\Users\\pabas\\.nuget\\packages\\microsoft.data.sqlite.core\\8.0.22\\microsoft.data.sqlite.core.8.0.22.nupkg.sha512",
