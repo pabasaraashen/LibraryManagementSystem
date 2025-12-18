@@ -24,12 +24,6 @@ A full-stack web application for managing a library's book inventory with a mode
 - **Modal Forms** - Intuitive popup forms for adding/editing books
 - **Real-time Updates** - Instant UI updates after operations
 
-## 📋 Prerequisites
-
-- [.NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
-- [Node.js](https://nodejs.org/) (v18 or higher)
-- [SQL Server](https://www.microsoft.com/sql-server) or SQL Server Express
-
 ## 🛠️ Installation
 
 ### Backend Setup
