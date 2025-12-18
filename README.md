@@ -7,7 +7,7 @@ A full-stack web application for managing a library's book inventory with a mode
 ### Backend
 - **.NET 8.0** - ASP.NET Core Web API
 - **Entity Framework Core** - ORM for database operations
-- **SQL Server** - Database (configured via connection string)
+- **SQLite** - Database 
 
 ### Frontend
 - **React 18** - UI library
@@ -47,7 +47,7 @@ A full-stack web application for managing a library's book inventory with a mode
 3. Update the connection string in `appsettings.json`:
    ```json
    "ConnectionStrings": {
-     "DefaultConnection": "Server=YOUR_SERVER;Database=LibraryDB;Trusted_Connection=True;TrustServerCertificate=True;"
+     "DefaultConnection": "Data Source=library.db"
    }
    ```
 
@@ -76,7 +76,7 @@ A full-stack web application for managing a library's book inventory with a mode
 cd Backend
 dotnet run
 ```
-The API will run on `https://localhost:7095` (or the port specified in `launchSettings.json`)
+The API will run on `https://localhost:5156`
 
 ### Start the Frontend
 
@@ -84,7 +84,10 @@ The API will run on `https://localhost:7095` (or the port specified in `launchSe
 cd frontend
 npm run dev
 ```
-The frontend will run on `http://localhost:5173`
+The frontend will run on `"http://localhost:5173",
+                          "http://localhost:5174", 
+                          "http://localhost:5175",
+                          "http://localhost:5176"`
 
 ## 📡 API Endpoints
 
@@ -101,9 +104,9 @@ The frontend will run on `http://localhost:5173`
 **POST /api/books**
 ```json
 {
-  "title": "The Great Gatsby",
-  "author": "F. Scott Fitzgerald",
-  "description": "A classic American novel set in the Jazz Age"
+  "title": "",
+  "author": "",
+  "description": ""
 }
 ```
 
@@ -133,50 +136,6 @@ LibraryManagementSystem/
     └── package.json
 ```
 
-## 🔧 Development
+## User Interfaces of project
 
-### Backend Development
-- **Hot Reload**: The .NET app supports hot reload during development
-- **Swagger**: API documentation available at `/swagger` when running in development mode
-
-### Frontend Development
-- **Hot Module Replacement**: Vite provides instant HMR
-- **TypeScript**: Full type checking enabled
-- **ESLint**: Code quality and consistency checking
-
-## 🚢 Building for Production
-
-### Backend
-```bash
-cd Backend
-dotnet publish -c Release -o ./publish
-```
-
-### Frontend
-```bash
-cd frontend
-npm run build
-```
-The production build will be in the `dist/` folder.
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📝 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## 👤 Author
-
-Your Name - [@yourgithub](https://github.com/yourusername)
-
-## 🙏 Acknowledgments
-
-- Built with modern web technologies
-- Inspired by real-world library management needs
 
